@@ -56,7 +56,7 @@ public class AnmeldedatenConverter {
                     """,
                     anmeldung.getNummer(),
                     anmeldung.getFahrzeug(),
-                    anmeldung.getTeanName(),
+                    anmeldung.getTeamName(),
                     anmeldung.isTeamStatus() ? "[COLOR=rgb(65, 168, 95)][B]ST[/B][/COLOR]" : "[COLOR=#FF0000][B]ET[/B][/COLOR]",
                     anmeldung.isAngemeldet())
             );
@@ -103,7 +103,7 @@ public class AnmeldedatenConverter {
                     """,
                             anmeldung.getNummer(),
                             anmeldung.getFahrzeug(),
-                            anmeldung.getTeanName(),
+                            anmeldung.getTeamName(),
                             anmeldung.isTeamStatus() ? "[COLOR=rgb(65, 168, 95)][B]ST[/B][/COLOR]" : "[COLOR=#FF0000][B]ET[/B][/COLOR]",
                             anmeldung.isAngemeldet())
             );
@@ -150,7 +150,7 @@ public class AnmeldedatenConverter {
                     """,
                             anmeldung.getNummer(),
                             anmeldung.getFahrzeug(),
-                            anmeldung.getTeanName(),
+                            anmeldung.getTeamName(),
                             anmeldung.isTeamStatus() ? "[COLOR=rgb(65, 168, 95)][B]ST[/B][/COLOR]" : "[COLOR=#FF0000][B]ET[/B][/COLOR]"
                     ));
             klasseOld = anmeldung.getKlasse();
@@ -196,7 +196,7 @@ public class AnmeldedatenConverter {
                     """,
                             anmeldung.getNummer(),
                             anmeldung.getFahrzeug(),
-                            anmeldung.getTeanName(),
+                            anmeldung.getTeamName(),
                             anmeldung.isTeamStatus() ? "[COLOR=rgb(65, 168, 95)][B]ST[/B][/COLOR]" : "[COLOR=#FF0000][B]ET[/B][/COLOR]")
             );
             klasseOld = anmeldung.getKlasse();

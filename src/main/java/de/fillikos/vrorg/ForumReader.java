@@ -6,17 +6,18 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ForumReader {
 
-    private ConfigDatei configDatei;
+    private final ConfigDatei configDatei;
 
     public ForumReader(ConfigDatei configDatei) {
         this.configDatei = configDatei;
     }
 
-    public void getSaisonAnmeldeListe(List<Anmeldung> anmeldungen) {
+    private void getSaisonAnmeldeListe(List<Anmeldung> anmeldungen) {
         try {
             Document doc = Jsoup.connect(configDatei.getSaisonanmeldeThread()).get();
             Element firstThread = doc.selectFirst(".message-body");
@@ -51,7 +52,7 @@ public class ForumReader {
         }
     }
 
-    public void getEventAnmeldeDaten(List<Anmeldung> anmeldungen) {
+    private void getEventAnmeldeDaten(List<Anmeldung> anmeldungen) {
         try {
             Document doc = Jsoup.connect(configDatei.getEventanmeldeThread()).get();
             Elements tables = doc.selectFirst(".message-body").select(".bbTable").select("tr");
@@ -89,5 +90,11 @@ public class ForumReader {
     public void getForumsDaten(List<Anmeldung> anmeldungen) {
         getSaisonAnmeldeListe(anmeldungen);
         getEventAnmeldeDaten(anmeldungen);
+    }
+
+    public List<Anmeldung> getUebersichtAnmeldungen() {
+        List<Anmeldung> uebersichtAnmeldungen = new ArrayList<>();
+        getForumsDaten(uebersichtAnmeldungen);
+        return uebersichtAnmeldungen;
     }
 }

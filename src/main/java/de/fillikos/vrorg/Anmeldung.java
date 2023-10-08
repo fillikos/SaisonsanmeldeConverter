@@ -6,15 +6,15 @@ public class Anmeldung {
     private int nummer;
     private Klasse klasse;
     private String fahrzeug;
-    private String teanName;
+    private String teamName;
     private boolean teamStatus;
     private String angemeldet;
 
-    public Anmeldung(int nummer, Klasse klasse, String fahrzeug, String teanName, boolean teamStatus) {
+    public Anmeldung(int nummer, Klasse klasse, String fahrzeug, String teamName, boolean teamStatus) {
         this.nummer = nummer;
         this.klasse = klasse;
         this.fahrzeug = fahrzeug;
-        this.teanName = teanName;
+        this.teamName = teamName;
         this.teamStatus = teamStatus;
         this.angemeldet = "";
     }
@@ -35,12 +35,12 @@ public class Anmeldung {
         this.fahrzeug = fahrzeug;
     }
 
-    public String getTeanName() {
-        return teanName;
+    public String getTeamName() {
+        return teamName;
     }
 
-    public void setTeanName(String teanName) {
-        this.teanName = teanName;
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
     }
 
     /**
@@ -84,12 +84,12 @@ public class Anmeldung {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Anmeldung anmeldung = (Anmeldung) o;
-        return nummer == anmeldung.nummer && teamStatus == anmeldung.teamStatus && angemeldet == anmeldung.angemeldet && klasse == anmeldung.klasse && Objects.equals(fahrzeug, anmeldung.fahrzeug) && Objects.equals(teanName, anmeldung.teanName);
+        return nummer == anmeldung.nummer && teamStatus == anmeldung.teamStatus && angemeldet == anmeldung.angemeldet && klasse == anmeldung.klasse && Objects.equals(fahrzeug, anmeldung.fahrzeug) && Objects.equals(teamName, anmeldung.teamName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nummer, klasse, fahrzeug, teanName, teamStatus, angemeldet);
+        return Objects.hash(nummer, klasse, fahrzeug, teamName, teamStatus, angemeldet);
     }
 
     @Override
@@ -98,7 +98,7 @@ public class Anmeldung {
                 "nummer=" + nummer +
                 ", klasse=" + klasse +
                 ", fahrzeug='" + fahrzeug + '\'' +
-                ", teanName='" + teanName + '\'' +
+                ", teamName='" + teamName + '\'' +
                 ", teamStatus=" + teamStatus +
                 ", angemeldet=" + angemeldet +
                 '}';

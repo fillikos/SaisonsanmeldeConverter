@@ -10,6 +10,7 @@ public class ConfigDatei {
 
     private String saisonanmeldeThread;
     private String eventanmeldeThread;
+    private String rennstatistikLink;
     private String ausgabeDatei;
     private String anmeldeStart;
     private String anmeldeEnde;
@@ -19,9 +20,10 @@ public class ConfigDatei {
     public ConfigDatei() {
     }
 
-    public ConfigDatei(String saisonanmeldeThread, String eventanmeldeThread, String ausgabeDatei, String anmeldeStart, String anmeldeEnde, String rennTag, int wertungslaufNr) {
+    public ConfigDatei(String saisonanmeldeThread, String eventanmeldeThread, String rennstatistikLink, String ausgabeDatei, String anmeldeStart, String anmeldeEnde, String rennTag, int wertungslaufNr) {
         this.saisonanmeldeThread = saisonanmeldeThread;
         this.eventanmeldeThread = eventanmeldeThread;
+        this.rennstatistikLink = rennstatistikLink;
         this.ausgabeDatei = ausgabeDatei;
         this.anmeldeStart = anmeldeStart;
         this.anmeldeEnde = anmeldeEnde;
@@ -63,6 +65,14 @@ public class ConfigDatei {
 
     public void setEventanmeldeThread(String eventanmeldeThread) {
         this.eventanmeldeThread = eventanmeldeThread;
+    }
+
+    public String getRennstatistikLink() {
+        return rennstatistikLink;
+    }
+
+    public void setRennstatistikLink(String rennstatistikLink) {
+        this.rennstatistikLink = rennstatistikLink;
     }
 
     public String getAusgabeDatei() {
@@ -110,12 +120,12 @@ public class ConfigDatei {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ConfigDatei that = (ConfigDatei) o;
-        return wertungslaufNr == that.wertungslaufNr && Objects.equals(saisonanmeldeThread, that.saisonanmeldeThread) && Objects.equals(eventanmeldeThread, that.eventanmeldeThread) && Objects.equals(ausgabeDatei, that.ausgabeDatei) && Objects.equals(anmeldeStart, that.anmeldeStart) && Objects.equals(anmeldeEnde, that.anmeldeEnde) && Objects.equals(rennTag, that.rennTag);
+        return wertungslaufNr == that.wertungslaufNr && Objects.equals(saisonanmeldeThread, that.saisonanmeldeThread) && Objects.equals(eventanmeldeThread, that.eventanmeldeThread) && Objects.equals(rennstatistikLink, that.rennstatistikLink) && Objects.equals(ausgabeDatei, that.ausgabeDatei) && Objects.equals(anmeldeStart, that.anmeldeStart) && Objects.equals(anmeldeEnde, that.anmeldeEnde) && Objects.equals(rennTag, that.rennTag);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(saisonanmeldeThread, eventanmeldeThread, ausgabeDatei, anmeldeStart, anmeldeEnde, rennTag, wertungslaufNr);
+        return Objects.hash(saisonanmeldeThread, eventanmeldeThread, rennstatistikLink, ausgabeDatei, anmeldeStart, anmeldeEnde, rennTag, wertungslaufNr);
     }
 
     @Override
@@ -123,11 +133,12 @@ public class ConfigDatei {
         return "ConfigDatei{" +
                 "saisonanmeldeThread='" + saisonanmeldeThread + '\'' +
                 ", eventanmeldeThread='" + eventanmeldeThread + '\'' +
+                ", rennstatistikLink='" + rennstatistikLink + '\'' +
                 ", ausgabeDatei='" + ausgabeDatei + '\'' +
                 ", anmeldeStart='" + anmeldeStart + '\'' +
                 ", anmeldeEnde='" + anmeldeEnde + '\'' +
                 ", rennTag='" + rennTag + '\'' +
-                ", nummer=" + wertungslaufNr +
+                ", wertungslaufNr=" + wertungslaufNr +
                 '}';
     }
 }
