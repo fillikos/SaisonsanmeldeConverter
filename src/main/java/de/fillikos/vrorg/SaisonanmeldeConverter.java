@@ -103,7 +103,8 @@ public class SaisonanmeldeConverter {
 
     public String convertNeueAnmeldeThrad2HTML() {
         ForumReader forumReader = new ForumReader(configDatei);
-        forumReader.getForumsDaten(anmeldungen);
+        forumReader.getSaisonAnmeldeListe(anmeldungen);
+//        forumReader.getForumsDaten(anmeldungen);
 
         AnmeldedatenConverter anmeldedatenConverter = new AnmeldedatenConverter(configDatei, anmeldungen);
         String bbCode = anmeldedatenConverter.getEventanmeldeHead4HTML();

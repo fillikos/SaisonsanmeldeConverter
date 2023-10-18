@@ -17,7 +17,7 @@ public class ForumReader {
         this.configDatei = configDatei;
     }
 
-    private void getSaisonAnmeldeListe(List<Anmeldung> anmeldungen) {
+    public void getSaisonAnmeldeListe(List<Anmeldung> anmeldungen) {
         try {
             Document doc = Jsoup.connect(configDatei.getSaisonanmeldeThread()).get();
             Element firstThread = doc.selectFirst(".message-body");
